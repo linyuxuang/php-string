@@ -62,9 +62,14 @@ php-常用的内置字符串处理函数
                     
                     
       
- * 空格是在字符串中占一位的
-   
+ * 指定字符串长度不够在补充 
+ 
     	   str_pad()
+        
+            $str="linyuxun";
+           echo str_pad($str,10,"o");  //输出 linyuxunoo   这里指定10个长度，不够补充后面o添加上
+           echo str_pad($str,10,"pp",STR_PAD_BOTH)  输出plinyuxunp  不够10个长度   两边开始补充
+           echo str_pad($str,10,"ll",STR_PAD_LEFT); 输出 lllinyuxun     不够10个从左边开始补充
  
 *大小写有关的函数
   
