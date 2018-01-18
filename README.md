@@ -73,10 +73,11 @@ php-常用的内置字符串处理函数
  
 *大小写有关的函数
   
-          strtolower(); 
-          strtoupper();
-          ucfirst();
-          ucword()
+          strtolower();  将字符串转化为小写
+          strtoupper();  将字符串转化为大写
+          ucfirst();    将字符串的首字母转换为大写
+           ucwords — 将字符串中每个单词的首字母转换为大写
+           
           和HTML标签相关的字符串格式化
           nl2br
           htmllentities();
