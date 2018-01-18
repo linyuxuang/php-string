@@ -115,16 +115,30 @@ php-常用的内置字符串处理函数
          
          一般我们都是这样配套使用    	echo htmlspecialchars(stripslashes($_GET["str"]))."<br>";
          
-         
-           strip_tags()  删除用户输入的html标签
+           
+                     strip_tags()  删除用户输入的html标签
            
  
  *	其它的字符串格式化函数
   
-            number_format()
-            strrev()
-            md5();
-            md5_file();
+            number_format()   以千位分隔符方式格式化一个数字
+            
+                	$price=123456789.123;
+
+                echo $price."<br>";       123456789.123
+                echo number_format($price)."<br>";    123,456,789
+                echo number_format($price, 2)."<br>";  123,456,789.12
+                echo number_format($price, 2, ',', '.')."<br>";  123.456.789,12
+                echo number_format($price, 2, '.', ',')."<br>";  123,456,789.12
+                
+             
+              strrev()   反转字符串
+              md5(); 数字加密 (一般用于密码加密)
+              
+              	$pass="1234&#abc";
+	              echo md5($pass);      输出 3f816eb766b44d688b9dfe81961260fc
+               
+              md5_file();
  
  *	在PHP中所有字符串处理函数，都不是在原字符串上修改， 而是返回一个新格式化后的字符串。
  
