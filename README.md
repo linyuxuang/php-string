@@ -54,12 +54,11 @@ php-常用的内置字符串处理函数
                           echo  strlen(ltrim($str));  //12
                           
                           
-                          
-                    		$str = "$   Hello World!";
-                      
-                        echo $str;      输出  $ Hello World!
-                        echo "<br>";
-                        echo  ltrim($str,"$");    输出   Hello World! 
+
+                       $str = "$   Hello World!";
+                         echo $str;      输出  $ Hello World!
+                         echo "<br>";
+                         echo  ltrim($str,"$");    输出   Hello World! 
                     
                     
       
