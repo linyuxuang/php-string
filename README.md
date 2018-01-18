@@ -99,24 +99,17 @@ php-常用的内置字符串处理函数
                    hello<br />
                    aaaa<br />
                    bbb<br />
-
-
           htmllentities();  把HTML 实体转换为内容：
           
           htmlspecialchars   去掉实体(用户输入什么内容就输出什么内容)  推荐用这个
 
-          stripslashes()   
+          stripslashes() 去掉 \ 
           
               $str = "Is your name O\'reilly?";
+               echo stripslashes($str); 输出: Is your name O'reilly?
+                 一般我们都是这样配套使用   echo htmlspecialchars(stripslashes($_GET["str"]))."<br>";
 
-             // 输出: Is your name O'reilly?
-               echo stripslashes($str);
-         
-         
-         一般我们都是这样配套使用    	echo htmlspecialchars(stripslashes($_GET["str"]))."<br>";
-         
-           
-                     strip_tags()  删除用户输入的html标签
+            strip_tags()  删除用户输入的html标签
            
  
  *	其它的字符串格式化函数
@@ -125,11 +118,11 @@ php-常用的内置字符串处理函数
             
                 	$price=123456789.123;
 
-                echo $price."<br>";       123456789.123
-                echo number_format($price)."<br>";    123,456,789
-                echo number_format($price, 2)."<br>";  123,456,789.12
-                echo number_format($price, 2, ',', '.')."<br>";  123.456.789,12
-                echo number_format($price, 2, '.', ',')."<br>";  123,456,789.12
+			echo $price."<br>";       123456789.123
+			echo number_format($price)."<br>";    123,456,789
+			echo number_format($price, 2)."<br>";  123,456,789.12
+			echo number_format($price, 2, ',', '.')."<br>";  123.456.789,12
+			echo number_format($price, 2, '.', ',')."<br>";  123,456,789.12
                 
              
               strrev()   反转字符串
@@ -140,23 +133,20 @@ php-常用的内置字符串处理函数
                
                   md5_file();对整个文件加密
  
- *	在PHP中所有字符串处理函数，都不是在原字符串上修改， 而是返回一个新格式化后的字符串。
- 
-        admin 
+ *	 在PHP中所有字符串处理函数，都不是在原字符串上修改， 而是返回一个新格式化后的字符串。
+
 
          字符串比较函数 ==  <
-
-         strcmp($str1, $str2)
-         strcasecmp()
-
-          $str1 == $str2    0
-          $str1  >  $str2   1
-          $str1 < $str2     -1
+             strcmp($str1, $str2)   区分大小写
+             strcasecmp($str1, $str2) 不区分大小写
       
+	       $str1 == $str2    0
+	       $str1  >  $str2   1
+	       $str1 < $str2     -1
  
- *	以上是按字节顺序， 以下是按自然数排序
+	以上是按字节顺序， 以下是按自然数排序
  
-         strnatcmp()
+            strnatcmp()
 
 
 
