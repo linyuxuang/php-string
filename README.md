@@ -79,11 +79,45 @@ php-常用的内置字符串处理函数
            ucwords — 将字符串中每个单词的首字母转换为大写
            
           和HTML标签相关的字符串格式化
-          nl2br
-          htmllentities();
-          htmlspecialchars
-          stripslashes() 
-          strip_tags()
+           
+          nl2br    在字符串所有新行之前插入 HTML 换行标记
+          
+             $str="abc
+             def
+             www
+             hello
+             aaaa
+             bbb
+            ";
+
+         echo $str."<br>"; abc def www hello aaaa bbb 
+         
+         echo nl2br($str);
+                   abc<br />
+                   def<br />
+                   www<br />
+                   hello<br />
+                   aaaa<br />
+                   bbb<br />
+
+
+          htmllentities();  把HTML 实体转换为内容：
+          
+          htmlspecialchars   去掉实体(用户输入什么内容就输出什么内容)  推荐用这个
+
+          stripslashes()   
+          
+              $str = "Is your name O\'reilly?";
+
+             // 输出: Is your name O'reilly?
+               echo stripslashes($str);
+         
+         
+         一般我们都是这样配套使用    	echo htmlspecialchars(stripslashes($_GET["str"]))."<br>";
+         
+         
+           strip_tags()  删除用户输入的html标签
+           
  
  *	其它的字符串格式化函数
   
