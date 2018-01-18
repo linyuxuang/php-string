@@ -27,10 +27,30 @@ php-常用的内置字符串处理函数
           sprintf() 返回格式化的字符串(	%%	%b	%c	%d %f %o %x %s)
       
   2. 常用的字符串格式化函数
-  
-              ltrim()
-              rtrim();
-              trim();
+              strlen()  获取字符串长度
+              ltrim()   函数移除字符串左侧的空白字符或其他预定义字符 
+              rtrim()   移除字符串右侧的空白字符或其他预定义字符
+              trim()    移除字符串两侧的空白字符或其他预定义字符
+              
+              
+              ltrim(string,charlist)
+
+                    string 必需。规定要检查的字符串。
+
+                    charlist
+                    可选。规定从字符串中删除哪些字符。如果省略该参数，则移除下列所有字符：
+                    "\0" - NULL
+                    "\t" - 制表符
+                    "\n" - 换行
+                    "\x0B" - 垂直制表符
+                    "\r" - 回车
+                    " " - 空格
+                    	$str = "        Hello World!";
+                          echo strlen($str);     //20
+                          echo "<br>";
+                          echo  strlen(ltrim($str));  //12
+                    
+                    
       
  * 空格是在字符串中占一位的
    
